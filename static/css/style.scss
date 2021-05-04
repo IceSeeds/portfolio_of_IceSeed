@@ -1,0 +1,136 @@
+$__mode_debug: false;
+
+$anker_color: #ff7043;
+
+@function debug-color( $color ) {
+    $ret: $color;
+
+    @if $__mode_debug == false {
+        $ret: none;
+    }
+
+    @return $ret;
+}
+
+body {
+    background-color: burlywood;
+    font-family: "メイリオ";
+}
+
+a {
+    &:hover{
+        color : $anker_color;
+    }
+}
+
+header {
+    background-color: rgb( 187, 219, 197 );
+    width: 100%;
+    height: 100%;
+
+    .nav-top {
+        background-color: debug-color( skyblue );
+        font-size: 2.3vmax;
+
+        display: flex;
+        align-items: center;
+
+        .logo {
+            padding: 20px 30px;
+            display: inline-block;
+        }
+        nav {
+            margin-left: auto;
+            ul {
+                display: flex;
+                li {
+                    padding: 0 30px;
+                }
+            }
+        }
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+
+        .top {
+            .text-center {
+                background-color: debug-color( brown );
+                font-size: 5vmax; //相対指定。ビューポートの「幅か高さの長い方」の何パーセントか。
+                color: rgb( 52, 53, 52 );
+            }
+            .text-right {
+                background-color: debug-color( aqua );
+                font-size: 2vmax;
+                text-align: right;
+            }
+        }
+    }
+}
+
+h1 {
+    background-color: debug-color( aqua );
+    text-align: center;
+    font-size: 50px;
+    padding: 2%;
+}
+
+.about {
+    background-color: royalblue;
+    width: 100%;
+    height: 100%;
+    .about-main {
+        background-color: debug-color( red );
+        width: 100%;
+        height: 80%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .myface {
+            background-color: debug-color( salmon );
+            width: 25%;
+            height: 70%;
+            padding: 3%;
+            //margin: 3%;
+            img {
+                width: 100%;
+                height: auto;
+                
+            }
+        }
+        .about-info {
+            background-color: debug-color( blueviolet );
+            width: 70%;
+            height: 60%;
+            //margin: 3%;
+            text-align: center;
+            font-size: 1.3vmax;
+
+            .sub {
+                font-size: 3vmax;
+            }
+        }
+    }
+}
+
+.skill {
+    background-color: whitesmoke;
+    height: 100%;
+}
+
+.blog {
+    background-color: skyblue;
+    height: 100%;
+}
+
+footer {
+    background-color: brown;
+    height: 100%;
+}
